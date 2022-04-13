@@ -1,0 +1,23 @@
+.dashboardTopCard{
+    min-width: 250px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    height: 150px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-right: 15px;
+}.dashboardTopCard p{
+    color: #fff;
+    margin-bottom: 7px;
+    font-size: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.dashboardTopCard h2{
+    font-weight: 600;
+    color: #fff;
+}
