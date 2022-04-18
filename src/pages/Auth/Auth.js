@@ -1,42 +1,69 @@
 import React, {useState} from 'react'
 import './Auth.css'
+import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { signIn, signUp } from '../../actions/authActions'
+
 const Auth = () => {
+    const { register,setValue, handleSubmit } = useForm();
+  
+    const dispatch = useDispatch()
     const [isSignUp, setIsSignUp] = useState(true)
+
+    const handleChange = (data)=>{
+        console.log(data)
+
+        if (isSignUp) {
+            const creds = {fullname: data.fullname,email: data.email, password: data.password, password_confirmation: data.password_confirmation, username: data.username}
+            dispatch(signUp(creds))
+        }
+        else {
+            const creds = {email: data.email, password: data.password}
+            dispatch(signUp(creds))
+        }
+    }
+    const clearData = ()=>{
+        setValue("fullname", "");
+        setValue("username", "");
+        setValue("email", "");
+        setValue("password", "");
+        setValue("password_confirmation", "");
+    }
 
   return (
        <div className="app">
     <div className='auth'>
         <section>
+            <form>
             <article>
                 <h2>{isSignUp ? 'Sign Up' : 'Sign In'}</h2>
-        {isSignUp && <input type='text' placeholder='Full Name'/>}
-        <input type="email" placeholder='Email Address'/>
-        <input type="password" placeholder='Password'/>
-         {isSignUp && <input type="password" placeholder='Confirm Password'/>}
+        {isSignUp && <input type='text' placeholder='Full Name'  {...register("fullname")} />}
+        {isSignUp && <input type='text' placeholder='Username'  {...register("username")}/>}
+        <input type="email" placeholder='Email Address'  {...register("email")}/>
+        <input type="password" placeholder='Password' {...register("password")}/>
+         {isSignUp && <input type="password" placeholder='Confirm Password' {...register("password_confirmation")} />}
          {
-             !isSignUp && (<p>Forgot Password?</p>)
+             !isSignUp && (<span className='underliner'>Forgot Password?</span>)
          }
-         {/* {isSignUp ? (
-             <div className='checker-section'>
-             <input type="checkbox" name="" id="" /> <span>I agree to the <a href='#'>Terms & Conditions</a></span>
-             </div>
-         ) : (
-              <div className='checker-section'>
-             <input type="checkbox" name="" id="" /> <span>Remember me</span>
-             </div>
-         )} */}
          <Link to={`/dashboard`}>
-         <button >{isSignUp ? 'Create Account' : 'Sign In'}</button>
+         <button onClick={handleSubmit(handleChange)}>{isSignUp ? 'Create Account' : 'Sign In'}</button>
          </Link>
             </article>
+            </form>
             {isSignUp ? (
                 <p>
-                    Already have an account? <span className='underliner' onClick={()=>setIsSignUp(!isSignUp)}>Sign in here</span>
+                    Already have an account? <span className='underliner' onClick={()=>{
+                        setIsSignUp(!isSignUp)
+                        clearData()
+                    }}>Sign in here</span>
                 </p>
             ) : (
                 <p>
-                    Don't have an account? <span className='underliner' onClick={()=>setIsSignUp(!isSignUp)}>Sign up here</span>
+                    Don't have an account? <span className='underliner' onClick={()=>{
+                        setIsSignUp(!isSignUp)
+                       clearData()
+                    }}>Sign up here</span>
                 </p>
             )}
         </section>
