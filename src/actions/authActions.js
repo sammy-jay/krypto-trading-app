@@ -9,7 +9,7 @@ export const signIn = (credentials, navigate) => async (dispatch) => {
     );
     localStorage.setItem("user", JSON.stringify(data.data.user));
     dispatch({ type: "AUTH", payload: data.data });
-    if (data.status == "true") navigate("/auth");
+    if (data.status == "true") navigate("/verify");
   } catch (error) {
     console.log(error);
   }
@@ -34,7 +34,7 @@ export const signUp = (credentials, navigate) => async (dispatch) => {
     console.log("Step 4");
     dispatch({ type: "AUTH", payload: data.data.user });
     console.log("Step 5");
-    if (data.status == "true") navigate("/auth");
+    if (data.status == "true") navigate("/verify");
     console.log("Step 6");
   } catch (error) {
     console.log(error);

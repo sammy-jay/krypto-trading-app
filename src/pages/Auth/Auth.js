@@ -3,26 +3,14 @@ import "./Auth.css";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import {
-  signIn,
-  signUp,
-  verifyOTP,
-  resendOTP,
-} from "../../actions/authActions";
+import { signIn, signUp } from "../../actions/authActions";
 
 const Auth = () => {
   const navigate = useNavigate();
   const { register, setValue, handleSubmit } = useForm();
-  const [OTP, setOTP] = useState("");
   const dispatch = useDispatch();
   const [isSignUp, setIsSignUp] = useState(true);
 
-  const handleOTP = (e) => setOTP(e.target.value);
-  const verification = () => {
-    if (OTP.length === 4) {
-      dispatch(verifyOTP(OTP, navigate));
-    }
-  };
   const handleChange = async (data) => {
     console.log(data);
 
@@ -48,38 +36,6 @@ const Auth = () => {
     setValue("OTP", "");
     setValue("password_confirmation", "");
   };
-
-  if (localStorage.getItem("access_token")) {
-    return (
-      <div className="app">
-        <div className="auth">
-          <section>
-            <form>
-              <article>
-                <h2>OTP Verification</h2>
-
-                <input
-                  type="text"
-                  placeholder="OTP"
-                  value={OTP}
-                  onChange={handleOTP}
-                />
-
-                <button onClick={verification}>Verify</button>
-              </article>
-            </form>
-
-            <p>
-              Didn't receive one?{" "}
-              <span className="underliner" onClick={() => dispatch(resendOTP)}>
-                Resend OTP
-              </span>
-            </p>
-          </section>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="app">

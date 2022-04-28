@@ -8,6 +8,7 @@ import Wallet from "./pages/Wallet/Wallet";
 import Settings from "./pages/Settings/Settings";
 import Exchange from "./pages/Exchange/Exchange";
 import MarketCap from "./pages/MarketCap/MarketCap";
+import Verify from "./pages/Auth/Verify";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path="/" element={<Navigate to="/dashboard" />} />
 
       <Route path="/auth" element={<Auth />} />
+      <Route path="/verify" element={<Verify />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/wallet" element={<Wallet />} />
       <Route path="/transactions" element={<Transactions />} />
