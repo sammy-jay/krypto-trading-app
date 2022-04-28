@@ -10,6 +10,7 @@ import { IoIosNotificationsOutline } from "react-icons/io";
 const NavBar = ({ location }) => {
   const navigate = useNavigate();
   const user = useSelector((state) => state?.user);
+  console.log(user);
 
   //   if (!user) navigate("/auth");
 
@@ -30,7 +31,7 @@ const NavBar = ({ location }) => {
         </div>
         <div>
           <div className="details">
-            <h5>{user?.fullname}</h5>
+            <h5>fullname</h5>
             <p>{user?.email}</p>
           </div>
           <AiOutlineUser fontSize="25px" />
