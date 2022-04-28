@@ -10,7 +10,7 @@ export const signIn = (credentials, navigate) => async (dispatch) => {
     );
     localStorage.setItem("user", JSON.stringify(data.data.user));
     dispatch({ type: "AUTH", payload: data.data });
-    if (data.status == "true") return <Navigate to="/verify" replace />;
+    if (data.status == "true") navigate("/verify");
   } catch (error) {
     console.log(error);
   }
