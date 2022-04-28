@@ -1,6 +1,6 @@
 import * as api from "../api";
 
-export const signIn = (credentials) => async (dispatch) => {
+export const signIn = (credentials, navigate) => async (dispatch) => {
   try {
     const { data } = await api.signIn(credentials);
     localStorage.setItem(
@@ -9,13 +9,13 @@ export const signIn = (credentials) => async (dispatch) => {
     );
     localStorage.setItem("user", JSON.stringify(data.data.user));
     dispatch({ type: "AUTH", payload: data.data });
-    if (data.status === "true") return true;
+    if (data.status == "true") navigate("/auth");
   } catch (error) {
     console.log(error);
   }
 };
 
-export const signUp = (credentials) => async (dispatch) => {
+export const signUp = (credentials, navigate) => async (dispatch) => {
   try {
     const { data } = await api.signUp(credentials);
     console.log("Step 1");
@@ -34,7 +34,7 @@ export const signUp = (credentials) => async (dispatch) => {
     console.log("Step 4");
     dispatch({ type: "AUTH", payload: data.data.user });
     console.log("Step 5");
-    if (data.status === "true") return true;
+    if (data.status == "true") navigate("/auth");
     console.log("Step 6");
   } catch (error) {
     console.log(error);
@@ -51,10 +51,10 @@ export const resendOTP = () => async (dispatch) => {
   }
 };
 
-export const verifyOTP = (OTP) => async (dispatch) => {
+export const verifyOTP = (OTP, navigate) => async (dispatch) => {
   try {
-    const { status } = await api.verifyOTP({ otp: OTP });
-    if (status === "true") return true;
+    const { data: status } = await api.verifyOTP({ otp: OTP });
+    if (status === "true") navigate("/dashboard");
   } catch (error) {
     console.log(error);
   }

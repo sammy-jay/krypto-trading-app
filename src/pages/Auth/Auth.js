@@ -20,7 +20,7 @@ const Auth = () => {
   const handleOTP = (e) => setOTP(e.target.value);
   const verification = () => {
     if (OTP.length === 4) {
-      if (dispatch(verifyOTP(OTP))) navigate("/dashboard");
+      dispatch(verifyOTP(OTP, navigate));
     }
   };
   const handleChange = async (data) => {
@@ -34,10 +34,10 @@ const Auth = () => {
         password_confirmation: data.password_confirmation,
         username: data.username,
       };
-      if (dispatch(signUp(creds))) navigate("/auth");
+      dispatch(signUp(creds, navigate));
     } else {
       const creds = { email: data.email, password: data.password };
-      if (dispatch(signIn(creds))) navigate("/auth");
+      dispatch(signIn(creds, navigate));
     }
   };
   const clearData = () => {
