@@ -2,7 +2,7 @@ import * as api from "../api";
 
 export const signIn = (credentials) => async (dispatch) => {
   try {
-    const response = await api.signIn(credentials);
+    const { response } = await api.signIn(credentials);
     localStorage.setItem(
       "access_token",
       JSON.stringify(response.data.access_token)
@@ -17,9 +17,8 @@ export const signIn = (credentials) => async (dispatch) => {
 
 export const signUp = (credentials) => async (dispatch) => {
   try {
-    const response = await api.signUp(credentials);
+    const { response } = await api.signUp(credentials);
     console.log("Step 1");
-    console.log(response);
     localStorage.setItem(
       "access_token",
       JSON.stringify(response.data.access_token)
@@ -54,7 +53,7 @@ export const resendOTP = () => async (dispatch) => {
 
 export const verifyOTP = (OTP) => async (dispatch) => {
   try {
-    const { status } = await api.verifyOTP(OTP);
+    const { status } = await api.verifyOTP({ otp: OTP });
     if (status === "true") return true;
   } catch (error) {
     console.log(error);
