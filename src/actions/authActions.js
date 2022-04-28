@@ -19,6 +19,7 @@ export const signUp = (credentials) => async (dispatch) => {
   try {
     const response = await api.signUp(credentials);
     console.log("Step 1");
+    console.log(response);
     localStorage.setItem(
       "access_token",
       JSON.stringify(response.data.access_token)
