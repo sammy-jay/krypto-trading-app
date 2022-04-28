@@ -10,7 +10,7 @@ export const signIn = (credentials, navigate) => async (dispatch) => {
     );
     localStorage.setItem("user", JSON.stringify(data.data.user));
     dispatch({ type: "AUTH", payload: data.data });
-    if (data.status == "true") navigate("/verify");
+    if (data.status == "true") return <Navigate to="/verify" replace />;
   } catch (error) {
     console.log(error);
   }
@@ -35,7 +35,7 @@ export const signUp = (credentials, navigate) => async (dispatch) => {
     console.log("Step 4");
     dispatch({ type: "AUTH", payload: data.data.user });
     console.log("Step 5");
-    if (data.status == "true") navigate("/verify");
+    if (data.status == "true") return <Navigate to="/verify" replace />;
     console.log("Step 6");
   } catch (error) {
     console.log(error);
@@ -55,7 +55,7 @@ export const resendOTP = () => async (dispatch) => {
 export const verifyOTP = (OTP, navigate) => async (dispatch) => {
   try {
     const { data: status } = await api.verifyOTP({ otp: OTP });
-    if (status === "true") navigate("/dashboard");
+    if (status === "true") return <Navigate to="/dashboard" replace />;
   } catch (error) {
     console.log(error);
   }
