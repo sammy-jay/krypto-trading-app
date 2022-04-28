@@ -1,0 +1,17 @@
+.dashboard{
+     padding: 1rem 2rem;
+       background-color: #171717;
+       width: calc(100% - 250px);
+}
+.topcards{
+    display: flex;
+   overflow-x: scroll;
+}
+.topcards::-webkit-scrollbar{
+    display: none;
+}
+@media screen and (max-width:820px) {
+    .dashboard{
+         width: calc(100% - 50px);
+    }
+}

@@ -1,0 +1,83 @@
+.auth{
+     background-color: #131722;
+     display: flex;
+     flex-direction: column;
+   
+    min-width: 100vw;
+     min-height: 100vh;
+     overflow-x: hidden;
+}
+.auth section{
+    margin: 4rem auto;
+     display: flex;
+     flex-direction: column;
+    width: 80vw;
+    max-width: 400px;
+     
+}
+.auth section article{
+      display: flex;
+     flex-direction: column;
+      border: 1px solid #2a2e39;
+      border-radius: 5px;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 1.5rem;
+     
+}
+.auth section article h2{
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.auth section article input{
+    outline: none;
+    border: none;
+    padding: 15px;
+    background-color: #2a2e39;
+    color: #fff;
+    margin: 15px 0;
+    border-radius: 5px;
+    width: 70vw;
+  max-width: calc(400px - 3rem);
+}
+.auth section p{
+    text-align: center;
+    margin-top: .75rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+
+}
+.checker-section{
+   display: flex;
+    justify-content: flex-start;
+}
+.checker-section input{
+      margin: 2px 0;
+    border-radius: 5px;
+  width: 5px;
+ color: red;
+}
+.checker-section span{
+    color: #fff;
+    font-size: 1.1rem;
+}
+.auth section article button{
+    background-color: #0069d9;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border: none;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.underliner{
+    text-decoration: underline;
+    color: #0069d9;
+    cursor: pointer;
+}
