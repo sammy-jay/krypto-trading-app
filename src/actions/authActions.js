@@ -9,9 +9,8 @@ export const signIn = (credentials, navigate) => async (dispatch) => {
       JSON.stringify(data.data.access_token)
     );
     localStorage.setItem("user", JSON.stringify(data.data.user));
-    localStorage.setItem("verified", false);
     dispatch({ type: "AUTH", payload: data.data });
-    navigate("/verify");
+    navigate("/dashboard");
   } catch (error) {
     console.log(error);
   }
@@ -37,7 +36,7 @@ export const signUp = (credentials, navigate) => async (dispatch) => {
     dispatch({ type: "AUTH", payload: data.data.user });
     console.log("Step 5");
     localStorage.setItem("verified", false);
-    navigate("/verify");
+    navigate("/dashboard");
     console.log("Step 6");
   } catch (error) {
     console.log(error);
