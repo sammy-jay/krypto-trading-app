@@ -7,18 +7,24 @@ const API = axios.create({
   },
 });
 
-API.interceptors.request.use((req) => {
-  if (localStorage.getItem("access_token") !== null) {
-    req.headers.Authorization = `Bearer ${localStorage.getItem(
-      "access_token"
-    )}`;
-    return req;
-  }
-});
+// API.interceptors.request.use((req) => {
+//   if (localStorage.getItem("access_token") !== null) {
+//     req.headers.Authorization = `Bearer ${JSON.parse(
+//       localStorage.getItem("access_token")
+//     )}`;
+//     return req;
+//   }
+// });
+
+const config = {
+  headers: {
+    Authorization: localStorage.getItem("access_token"),
+  },
+};
 
 export const getMarketData = () => API.get("/market/data");
 export const signIn = (credentials) => API.post("/auth/login", credentials);
 export const signUp = (credentials) => API.post("/auth/register", credentials);
-export const getUser = () => API.get("/account/user");
-export const verifyOTP = (OTP) => API.post("/account/verify", OTP);
-export const resendOTP = () => API.post("/account/resend-otp");
+export const getUser = () => API.get("/account/user", config);
+export const verifyOTP = (OTP) => API.post("/account/verify", OTP, config);
+export const resendOTP = () => API.post("/account/resend-otp", {}, config);
