@@ -13,7 +13,7 @@ import Verify from "./pages/Auth/Verify";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/dashboard" />} />
+      <Route exact path="/" element={<Navigate to="/dashboard" />} />
 
       <Route path="/auth" element={<Auth />} />
       <Route path="/verify" element={<Verify />} />
