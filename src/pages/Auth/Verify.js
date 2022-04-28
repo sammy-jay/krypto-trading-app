@@ -13,6 +13,7 @@ const Verify = () => {
     if (OTP.length === 4) {
       dispatch(verifyOTP(OTP, navigate));
     }
+    console.log(OTP);
   };
   return (
     <div className="app">

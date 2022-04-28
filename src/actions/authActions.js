@@ -56,7 +56,7 @@ export const resendOTP = () => async (dispatch) => {
 
 export const verifyOTP = (OTP, navigate) => async (dispatch) => {
   try {
-    await api.verifyOTP({ otp: OTP });
+    const { data: status } = await api.verifyOTP({ otp: OTP });
     localStorage.setItem("verified", true);
     navigate("/dashboard");
   } catch (error) {
