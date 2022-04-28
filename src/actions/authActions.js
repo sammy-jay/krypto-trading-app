@@ -9,6 +9,7 @@ export const signIn = (credentials, navigate) => async (dispatch) => {
       JSON.stringify(data.data.access_token)
     );
     localStorage.setItem("user", JSON.stringify(data.data.user));
+    localStorage.setItem("verified", false);
     dispatch({ type: "AUTH", payload: data.data });
     navigate("/verify");
   } catch (error) {
@@ -35,6 +36,7 @@ export const signUp = (credentials, navigate) => async (dispatch) => {
     console.log("Step 4");
     dispatch({ type: "AUTH", payload: data.data.user });
     console.log("Step 5");
+    localStorage.setItem("verified", false);
     navigate("/verify");
     console.log("Step 6");
   } catch (error) {
@@ -55,6 +57,7 @@ export const resendOTP = () => async (dispatch) => {
 export const verifyOTP = (OTP, navigate) => async (dispatch) => {
   try {
     await api.verifyOTP({ otp: OTP });
+    localStorage.setItem("verified", true);
     navigate("/dashboard");
   } catch (error) {
     console.log(error);

@@ -8,7 +8,7 @@ import TTable from "../../components/smallercomponents/transactions/TTable";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  if (localStorage.getItem("user") === null) {
+  if (localStorage.getItem("verified") === false) {
     return <Navigate to="/auth" replace />;
   }
   return (
