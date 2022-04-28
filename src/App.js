@@ -13,17 +13,16 @@ import Verify from "./pages/Auth/Verify";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Dashboard />}>
-        <Route path="/auth" element={<Auth />} />
-        <Route path="/verify" element={<Verify />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/wallet" element={<Wallet />} />
-        <Route path="/transactions" element={<Transactions />} />
-        <Route path="/trading" element={<Trading />} />
-        <Route path="/marketcap" element={<MarketCap />} />
-        <Route path="/exchange" element={<Exchange />} />
-        <Route path="/settings" element={<Settings />} />
-      </Route>
+      <Route path="/" element={<Dashboard />} />
+      <Route path="/auth" element={<Auth />} />
+      <Route path="/verify" element={<Verify />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/wallet" element={<Wallet />} />
+      <Route path="/transactions" element={<Transactions />} />
+      <Route path="/trading" element={<Trading />} />
+      <Route path="/marketcap" element={<MarketCap />} />
+      <Route path="/exchange" element={<Exchange />} />
+      <Route path="/settings" element={<Settings />} />
     </Routes>
   );
 }
