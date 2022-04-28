@@ -1,4 +1,5 @@
 import * as api from "../api";
+import { Navigate } from "react-router-dom";
 
 export const signIn = (credentials, navigate) => async (dispatch) => {
   try {
@@ -9,7 +10,7 @@ export const signIn = (credentials, navigate) => async (dispatch) => {
     );
     localStorage.setItem("user", JSON.stringify(data.data.user));
     dispatch({ type: "AUTH", payload: data.data });
-    if (data.status == "true") navigate("/verify");
+    if (data.status == "true") return <Navigate to="/verify" replace />;
   } catch (error) {
     console.log(error);
   }
