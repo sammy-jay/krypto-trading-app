@@ -7,14 +7,14 @@ const API = axios.create({
   },
 });
 
-API.interceptors.request.use((req) => {
-  if (localStorage.getItem("access_token") !== null) {
-    req.headers.Authorization = `Bearer ${JSON.parse(
-      localStorage.getItem("access_token")
-    )}`;
-    return req;
-  }
-});
+// API.interceptors.request.use((req) => {
+//   if (localStorage.getItem("access_token") !== null) {
+//     req.headers.Authorization = `Bearer ${JSON.parse(
+//       localStorage.getItem("access_token")
+//     )}`;
+//     return req;
+//   }
+// });
 
 export const getMarketData = () => API.get("/market/data");
 export const signIn = (credentials) => API.post("/auth/login", credentials);
