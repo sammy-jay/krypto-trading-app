@@ -7,10 +7,10 @@ const API = axios.create({baseURL: 'https://api.trycoingro.com/api/v1', headers:
 }})
 
 
-API.interceptors.request.use((req) => {
-    req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('access_token'))}`
-    return req
-})
+// API.interceptors.request.use((req) => {
+//     req.headers.Authorization = `Bearer ${JSON.parse(localStorage.getItem('access_token'))}`
+//     return req
+// })
 
 export const getMarketData = () => API.get('/market/data')
 export const signIn = (credentials) => API.post('/auth/login', credentials)
