@@ -8,9 +8,9 @@ import TTable from "../../components/smallercomponents/transactions/TTable";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  if (localStorage.getItem("user") === null) {
-    return <Navigate to="/auth" replace />;
-  }
+  // if (localStorage.getItem("user") === null) {
+  //   return <Navigate to="/auth" replace />;
+  // }
   return (
     <div className="app">
       <SideBar />

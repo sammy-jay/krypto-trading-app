@@ -1,5 +1,6 @@
 const initialState = {
   user: null,
+  marketData: null
 };
 
 const authReducer = (state = initialState, action) => {
@@ -11,6 +12,9 @@ const authReducer = (state = initialState, action) => {
         username: action.payload.username,
       };
       return { ...state, user: newUser };
+    case "MARKETDATA":
+    
+      return { ...state, marketData: action.payload };
     default:
       return state;
   }

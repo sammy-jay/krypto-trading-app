@@ -65,8 +65,9 @@ export const verifyOTP = (OTP, navigate) => async (dispatch) => {
 
 export const getMarketData = () => async (dispatch) => {
   try {
-    const data = await api.getMarketData();
-    console.log(data);
+    const {data: {data}} = await api.getMarketData();
+    
+    dispatch({type: "MARKETDATA", payload: data})
     if (data.status === "true") return true;
   } catch (error) {
     console.log(error);
