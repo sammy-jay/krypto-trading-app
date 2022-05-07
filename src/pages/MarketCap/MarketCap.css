@@ -1,0 +1,14 @@
+.market__special:nth-child(2){
+    border-radius: 999px;
+    color: #3f3db2;
+    background-color: #262537;
+    width: 60px;
+    height: 60px;
+    padding: 5px 10px;
+}
+.positive_trend{
+    color: #349625;
+}
+.negative_trend{
+    color: #e44d4d;
+}

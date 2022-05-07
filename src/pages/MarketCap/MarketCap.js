@@ -1,4 +1,5 @@
 import React from 'react'
+import './MarketCap.css'
 import NavBar from '../../components/NavBar/NavBar'
 import SideBar from '../../components/SideBar/SideBar'
 import THeader from '../../components/smallercomponents/transactions/THeader'
@@ -9,6 +10,7 @@ const MarketCap = () => {
   console.log(Array(marketData));
   return (
     <div className='app'>
+      
         <SideBar/>
         <div className='dashboard'>
             <NavBar location='Market Cap'/>
@@ -28,23 +30,81 @@ const MarketCap = () => {
                 </tr>
             </thead>
             <tbody>
-              {/* {marketData && marketData.map((data) => {
-                return(
                   <tr>
-                   
-                    <td>#43453251612</td>
-                    <td>2/5/2020 06:24AM</td>
-                    <td>Thomas</td>
-                    <td>Samuel</td>
+                    <td className='market__special'><span>#1</span></td>
                     <td>Bitcoin</td>
-                    <td>+$5,564</td>
-                   
+                    <td>$39,534.16</td>
+                    <td className='positive_trend'>2.54%</td>
+                    <td>$220,083,001,631</td>
+                    <td>...</td>
                 </tr>
-                )
-              })} */}
+                  <tr>
+                    <td className='market__special'><span>#2</span></td>
+                    <td>Ethereum</td>
+                    <td>$392.236</td>
+                    <td  className='positive_trend'>2.54%</td>
+                    <td>$083,001,631</td>
+                    <td>...</td>
+                </tr>
+                  <tr>
+                    <td className='market__special'><span>#3</span></td>
+                    <td>LiteCoin</td>
+                    <td>$39,534.16</td>
+                    <td className='negative_trend'>2.54%</td>
+                    <td>$220,083,001,631</td>
+                    <td>...</td>
+                </tr>
+                  <tr>
+                    <td className='market__special'>#4</td>
+                    <td>Bitcoin</td>
+                    <td>$39,534.16</td>
+                    <td className='positive_trend'>2.54%</td>
+                    <td>$220,083,001,631</td>
+                    <td>...</td>
+                </tr>
+                  <tr>
+                    <td className='market__special'>#5</td>
+                    <td>Ethereum</td>
+                    <td>$392.236</td>
+                    <td  className='positive_trend'>2.54%</td>
+                    <td>$083,001,631</td>
+                    <td>...</td>
+                </tr>
+                  <tr>
+                    <td className='market__special'>#6</td>
+                    <td>Bitcoin</td>
+                    <td>$39,534.16</td>
+                    <td className='negative_trend'>2.54%</td>
+                    <td>$220,083,001,631</td>
+                    <td>...</td>
+                </tr>
+                  <tr>
+                    <td className='market__special'>#7</td>
+                    <td>Bitcoin</td>
+                    <td>$39,534.16</td>
+                    <td className='positive_trend'>2.54%</td>
+                    <td>$220,083,001,631</td>
+                    <td>...</td>
+                </tr>
+                  <tr>
+                    <td className='market__special'>#8</td>
+                    <td>Ethereum</td>
+                    <td>$392.236</td>
+                    <td  className='positive_trend'>2.54%</td>
+                    <td>$083,001,631</td>
+                    <td>...</td>
+                </tr>
+                  <tr>
+                    <td className='market__special'>#9</td>
+                    <td>Bitcoin</td>
+                    <td>$39,534.16</td>
+                    <td className='negative_trend'>2.54%</td>
+                    <td>$220,083,001,631</td>
+                    <td>...</td>
+                    </tr>
               </tbody>
         </table>
-    </div>
+      </div>
     </div>
     </div>
   )

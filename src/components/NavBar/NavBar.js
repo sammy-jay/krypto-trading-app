@@ -31,10 +31,8 @@ const NavBar = ({ location }) => {
         </div>
         <div>
           <div className="details">
-            {/* <h5>{user?.fullname}</h5>
-            <p>{user?.email}</p> */}
-            <h5>Tolu Soneye</h5>
-            <p>sammy@gmail.com</p>
+            <h5>{user?.fullname}</h5>
+            <p>{user?.email}</p>
           </div>
           <AiOutlineUser fontSize="25px" />
           <div className="power">

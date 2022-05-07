@@ -6,6 +6,10 @@
     min-height: 100vh;
     background-color: #202020;
     align-items: flex-start;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
 }
 .sidebar h1{
     color: #fff;

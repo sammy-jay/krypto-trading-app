@@ -44,9 +44,56 @@ const Dashboard = () => {
             bgColor="#ad4cbd"
           />
         </section>
-        {/* <THeader/>
-    <TTable/> */}
-      </div>{" "}
+        <section className="middle_cards">
+          <article className="crypto_statistics">
+            <div className="crypto_statistics_one">
+              <div className="crypto_statistics_one_first">
+                <h3>Crypto Statistics</h3>
+                <p>Lorem ipsum dolor consectetur adipisicing.</p>
+              </div>
+              <div className="crypto_statistics_one_second">
+                <p>Date</p>
+                <p>Value</p>
+              </div>
+            </div>
+            <div className="crypto_statistics_two">
+              <p>Bitcoin</p>
+              <p>Ripple</p>
+              <p>Ethereum</p>
+              <p>LiteCoin</p>
+            </div>
+            <div className="crypto_statistics_three">
+              <h1>Chart Here</h1>
+            </div>
+          </article>
+          <article className="market_overview">
+          <div className="market_overview_one">
+              <div className="market_overview_one_first">
+                <h3>Market Overview</h3>
+                <p>Lorem ipsum dolor consectetur adipisicing.</p>
+              </div>
+              <div className="market_overview_one_second">
+                <p>Get Report</p>
+              </div>
+            </div>
+            <div className="market_overview_two">
+              <p>Week</p>
+              <p>Month</p>
+              <p>Year</p>
+            </div>
+            <div className="market_overview_three">
+              <h1>Chart Here</h1>
+            </div>
+          </article>
+        </section>
+        <section>
+          <article className="quick_transfer"></article>
+          <article className="market_orders">
+            <div className="sell_order"></div>
+            <div className="buy_order"></div>
+          </article>
+        </section>
+      </div>
     </div>
   );
 };
