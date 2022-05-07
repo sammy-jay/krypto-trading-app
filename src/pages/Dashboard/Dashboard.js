@@ -3,14 +3,12 @@ import { Navigate } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import SideBar from "../../components/SideBar/SideBar";
 import DashboardTopCard from "../../components/smallercomponents/DashboardTopCard";
-import THeader from "../../components/smallercomponents/transactions/THeader";
-import TTable from "../../components/smallercomponents/transactions/TTable";
 import "./Dashboard.css";
 
 const Dashboard = () => {
-  // if (localStorage.getItem("user") === null) {
-  //   return <Navigate to="/auth" replace />;
-  // }
+  if (localStorage.getItem("user") === null) {
+    return <Navigate to="/auth" replace />;
+  }
   return (
     <div className="app">
       <SideBar />
