@@ -1,41 +1,41 @@
-.ttable{
-   background-color: #202020;
-   color: #bcbecb;
-   padding: 10px 15px;
-   border-radius: 7px;
-   overflow-x: auto;
+.ttable {
+  background-color: #1e222d;
+  color: #bcbecb;
+  padding: 10px 15px;
+  border-radius: 7px;
+  overflow-x: auto;
 }
-.ttable::-webkit-scrollbar{
-    display: none;
+.ttable::-webkit-scrollbar {
+  display: none;
 }
-.ttable table{
-    width: 100%;
-    border-collapse: collapse;
+.ttable table {
+  width: 100%;
+  border-collapse: collapse;
 }
-.ttable thead{
-    margin-bottom: 10px;
+.ttable thead {
+  margin-bottom: 10px;
 }
-.ttable tbody{
-    font-size: 0.85rem;
+.ttable tbody {
+  font-size: 0.85rem;
 }
-.ttable td, .ttable th{
-    text-align: left;
-    height: 45px;
-    width: max-content;
-    border-bottom: 1px solid #292929;
-    border-collapse: collapse;
-    padding: 3px;
+.ttable td,
+.ttable th {
+  text-align: left;
+  height: 45px;
+  width: max-content;
+  border-bottom: 1px solid #292929;
+  border-collapse: collapse;
+  padding: 3px;
 }
 
-.arrow svg{
-    color: #2ac055;
+.arrow svg {
+  color: #2ac055;
 }
-.ttable span{
-    vertical-align: top;
+.ttable span {
+  vertical-align: top;
 }
-@media screen and (max-width:850px) {
-   .ttable table{
+@media screen and (max-width: 850px) {
+  .ttable table {
     width: max-content;
-    
-}
+  }
 }

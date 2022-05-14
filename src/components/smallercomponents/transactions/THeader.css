@@ -1,72 +1,72 @@
-.theader{
-    background-color: #171717;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 2.5rem;
-    margin-top: 1rem;
+.theader {
+  background-color: #1e222d;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  margin-top: 1rem;
 }
-.theader .first{
-    background-color: #202020;
-    color: #6d7175;
-    padding: 10px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex: 1;
+.theader .first {
+  background-color: #202020;
+  color: #6d7175;
+  padding: 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
 }
 
-.theader .first input{
-    background-color: transparent;
-    outline: none;
-    color: #fff;
-    padding: 2px;
-    border: 0;
+.theader .first input {
+  background-color: transparent;
+  outline: none;
+  color: #fff;
+  padding: 2px;
+  border: 0;
 }
-.theader .second{
-    display: flex;
-    justify-content: flex-end;
-    flex: 2;
+.theader .second {
+  display: flex;
+  justify-content: flex-end;
+  flex: 2;
 }
-.theader .second .filter{
-    display: flex;
-    padding: 10px 20px;
-     background-color: #202020;
-     align-items: center;
-     border-radius: 35px;
-     margin-right: 20px;
+.theader .second .filter {
+  display: flex;
+  padding: 10px 20px;
+  background-color: #202020;
+  align-items: center;
+  border-radius: 35px;
+  margin-right: 20px;
 }
-.theader .second .filter svg{
-    color: #6d7175;
+.theader .second .filter svg {
+  color: #6d7175;
 }
-.theader .second .filter p{
-    font-size: .5rem;
+.theader .second .filter p {
+  font-size: 0.5rem;
 }
-.theader .second .filter div{
-    margin: 0 15px;
+.theader .second .filter div {
+  margin: 0 15px;
 }
-.theader .second .saver{
-    padding: 10px 20px;
-    font-size: 1rem;
-    font-weight: 500;
-    border-radius: 30px;
-    background-color: #413fbc;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.theader .second .saver {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 30px;
+  background-color: #413fbc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.theader .second .saver p{
-    margin-left: 10px;
+.theader .second .saver p {
+  margin-left: 10px;
 }
-@media screen and (max-width:850px) {
-   .theader{
-   flex-direction: column;
-   justify-content: flex-start;
-   align-items: flex-start;
-}
-.theader .first{
+@media screen and (max-width: 850px) {
+  .theader {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .theader .first {
     margin-bottom: 15px;
-}
+  }
 }
