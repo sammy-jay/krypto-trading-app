@@ -7,7 +7,7 @@ const Exchange = () => {
   const styles = {
     parent: {
       fontSize: "0px",
-      color: " #1e222d;",
+      color: " #1e222d",
     },
     link: {
       textDecoration: "line-trough",

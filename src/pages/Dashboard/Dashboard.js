@@ -20,7 +20,7 @@ const Dashboard = () => {
       textDecoration: "line-trough",
     },
     span: {
-      color: " #1e222d;",
+      color: " #1e222d",
     },
   };
   // if (localStorage.getItem("user") === null) {
